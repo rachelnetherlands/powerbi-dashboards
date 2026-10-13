@@ -1,7 +1,7 @@
 # Supply Chain Performance
 
 **Live page:** [rachelnetherlands.github.io/powerbi-dashboards/dashboards/supply-chain-performance](https://rachelnetherlands.github.io/powerbi-dashboards/dashboards/supply-chain-performance/)
-· **Power BI report:** [open (sign-in required)](https://app.powerbi.com/reportEmbed?reportId=d7ba87c1-d758-4b59-82c4-433fada7a6b9&autoAuth=true&ctid=67faf4e1-0722-4b63-a20e-8aba41330063)
+· **Power BI report:** [open interactive report](https://app.powerbi.com/view?r=eyJrIjoiNmZlMjIxNTctYTRmNS00NjY3LTg2YzUtOWM3YzExNjQ0MjRhIiwidCI6IjY3ZmFmNGUxLTA3MjItNGI2My1hMjBlLThhYmE0MTMzMDA2MyJ9)
 
 ![Supply Chain Performance dashboard](assets/screenshot.png)
 
@@ -50,4 +50,4 @@ A dark sidebar of tile filters drives the whole page.
 
 - With only 100 products, a few products can move the averages a lot.
 - The source has two similar columns, `Lead time` and `Lead times`, with no explanation of the difference. The scorecard uses manufacturing lead time instead.
-- The live report is a secure embed, so viewers need a Power BI account with access to it.
+- The live report uses Power BI *Publish to web*, so it is public. Only public Kaggle data is used.

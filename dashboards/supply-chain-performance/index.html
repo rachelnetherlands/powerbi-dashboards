@@ -47,13 +47,13 @@
 <main class="wrap">
   <section class="panel">
     <div class="tabs">
-      <button class="on" data-view="shot">Screenshot</button>
-      <button data-view="live">Live report</button>
+      <button class="on" data-view="live">Live report</button>
+      <button data-view="shot">Screenshot</button>
     </div>
     <div class="frame" id="frame">
-      <img src="assets/screenshot.png" alt="Supply Chain Performance dashboard">
+      <iframe title="Supply Chain Performance" src="https://app.powerbi.com/view?r=eyJrIjoiNmZlMjIxNTctYTRmNS00NjY3LTg2YzUtOWM3YzExNjQ0MjRhIiwidCI6IjY3ZmFmNGUxLTA3MjItNGI2My1hMjBlLThhYmE0MTMzMDA2MyJ9" allowfullscreen></iframe>
     </div>
-    <p class="note" id="note">The live report is a secure Power BI embed. You need to sign in with an account that has access to it.</p>
+    <p class="note" id="note">Click the sidebar tiles or any chart to filter, and hover for values. <a href="https://app.powerbi.com/view?r=eyJrIjoiNmZlMjIxNTctYTRmNS00NjY3LTg2YzUtOWM3YzExNjQ0MjRhIiwidCI6IjY3ZmFmNGUxLTA3MjItNGI2My1hMjBlLThhYmE0MTMzMDA2MyJ9" target="_blank" rel="noopener">Open full screen ↗</a></p>
   </section>
 
   <section class="panel">
@@ -90,7 +90,7 @@
   </div>
 </main>
 <script>
-const EMBED = "https://app.powerbi.com/reportEmbed?reportId=d7ba87c1-d758-4b59-82c4-433fada7a6b9&autoAuth=true&ctid=67faf4e1-0722-4b63-a20e-8aba41330063";
+const EMBED = "https://app.powerbi.com/view?r=eyJrIjoiNmZlMjIxNTctYTRmNS00NjY3LTg2YzUtOWM3YzExNjQ0MjRhIiwidCI6IjY3ZmFmNGUxLTA3MjItNGI2My1hMjBlLThhYmE0MTMzMDA2MyJ9";
 const frame = document.getElementById('frame');
 document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
   document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
