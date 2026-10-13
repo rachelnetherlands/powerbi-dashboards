@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Title · Power BI</title>
+<meta name="description" content="One-line description of the dashboard.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--teal:#0F4C5C;--teal2:#2C8C8C;--mint:#B5DDD6;--orange:#E07A3F;--bg:#EEF3F5;--card:#fff;--ink:#1B2B34;--muted:#5B6C7A;--line:#DDE6EA}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1F26;--card:#11303A;--ink:#E6F2F0;--muted:#A9B7C2;--line:#1E4450}}
+  :root[data-theme="dark"]{--bg:#0B1F26;--card:#11303A;--ink:#E6F2F0;--muted:#A9B7C2;--line:#1E4450}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  header{background:var(--teal);color:#fff;padding:28px 16px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+  header a{color:var(--mint);text-decoration:none;font-size:14px}
+  header h1{margin:8px 0 4px;font-size:clamp(24px,4vw,34px)}
+  header p{margin:0;color:var(--mint)}
+  main{padding:28px 0 56px;display:grid;gap:24px}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 4px 18px rgba(15,76,92,.08)}
+  .tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+  .tabs button{font:inherit;font-size:14px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+  .tabs button.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:var(--bg)}
+  .frame iframe,.frame img{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:contain}
+  .note{font-size:13px;color:var(--muted);margin:10px 0 0}
+  h2{margin:0 0 12px;font-size:20px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .kpi{border-left:4px solid var(--orange);padding:6px 12px}
+  .kpi b{display:block;font-size:24px}
+  .kpi span{font-size:13px;color:var(--muted)}
+  ul{margin:0;padding-left:20px}
+  li{margin:6px 0}
+  .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  a{color:var(--teal2)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a href="../../">← All dashboards</a>
+    <h1>Dashboard Title</h1>
+    <p>Power BI · data source · size</p>
+  </div>
+</header>
+<main class="wrap">
+  <section class="panel">
+    <div class="tabs">
+      <button class="on" data-view="shot">Screenshot</button>
+      <button data-view="live">Live report</button>
+    </div>
+    <div class="frame" id="frame">
+      <img src="assets/screenshot.png" alt="Dashboard Title dashboard">
+    </div>
+    <p class="note" id="note">The live report is a secure Power BI embed. You need to sign in with an account that has access to it.</p>
+  </section>
+
+  <section class="panel">
+    <h2>Headline numbers</h2>
+    <div class="kpis">
+      <div class="kpi"><b>KPI value</b><span>KPI label</span></div>
+      <div class="kpi"><b>KPI value</b><span>KPI label</span></div>
+    </div>
+  </section>
+
+  <div class="two">
+    <section class="panel">
+      <h2>Key insights</h2>
+      <ul>
+        <li>Insight 1</li>
+        <li>Insight 2</li>
+      </ul>
+    </section>
+    <section class="panel">
+      <h2>How it was built</h2>
+      <ul>
+        <li><b>Data</b>: source link</li>
+        <li><b>Model</b>: how the data was loaded and modelled</li>
+        <li><b>Interactivity</b>: slicers, drill-down, tooltips</li>
+      </ul>
+    </section>
+  </div>
+</main>
+<script>
+const EMBED = "PASTE_POWER_BI_EMBED_URL_HERE";
+const frame = document.getElementById('frame');
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+  frame.innerHTML = b.dataset.view === 'live'
+    ? `<iframe title="Dashboard Title" src="${EMBED}" allowfullscreen></iframe>`
+    : `<img src="assets/screenshot.png" alt="Dashboard Title dashboard">`;
+});
+</script>
+</body>
+</html>
