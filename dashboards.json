@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "supply-chain-performance",
+    "title": "Supply Chain Performance",
+    "summary": "Revenue, costs, supplier quality and customer segments for a 100-SKU beauty supply chain, with clickable sidebar filters.",
+    "domain": "Supply chain",
+    "tools": ["Power BI", "REST API", "Python"],
+    "dataset": "Kaggle – Supply Chain Analysis",
+    "date": "2026-10",
+    "thumbnail": "dashboards/supply-chain-performance/assets/screenshot.png",
+    "embedUrl": "https://app.powerbi.com/reportEmbed?reportId=d7ba87c1-d758-4b59-82c4-433fada7a6b9&autoAuth=true&ctid=67faf4e1-0722-4b63-a20e-8aba41330063"
+  }
+]
